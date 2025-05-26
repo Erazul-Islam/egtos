@@ -29,7 +29,7 @@ export function Navbar() {
   ];
 
   return (
-    <header className="sticky max-w-[1440px] mx-auto md:mt-4 px-3 md:px-5 top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className=" max-w-[1440px] mx-auto md:mt-4 px-3 md:px-5 top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between">
         {/* Logo - always visible */}
         <div className="flex items-center md:flex-1 md:justify-start">

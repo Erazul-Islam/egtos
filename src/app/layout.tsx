@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} max-w-[1440px] mx-auto antialiased`}>
+      <body className={`${inter.variable} px-2 md:px-4 max-w-[1440px] mx-auto antialiased`}>
         <Navbar />
         {children}
         <Footer />

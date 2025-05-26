@@ -30,14 +30,24 @@ const Hero = () => {
         <div className="max-w-[1440px] lg:py-40 md:py-20 mx-auto px-3 md:px-5">
           <div className="flex md:flex-row flex-col items-center justify-between">
             <div className="">
-            <p className="text-[#1A1A1A] md:leading-[100px] md:text-7xl font-semibold">
-              {" "}
-              <span className="text-[#00A099] ">Dynamic</span> Teams. Experts
-              Only. <br /> <span className="text-[#00A099]">Global</span> Reach
-            </p>
-            <p className="text-[#344054] py-4 font-normal text-base"><span>The Intelligent Marketplace for Talent Acquisition Avoid hiring</span> <br /> <span>costs and layoffs by trading talent within a trusted network”</span></p>
-          </div>
-          <Image src={"/home/hero-1.png"} width={620} height={416} alt="" />
+              <p className="text-[#1A1A1A] md:leading-[100px] md:text-7xl font-semibold">
+                {" "}
+                <span className="text-[#00A099] ">Dynamic</span> Teams. Experts
+                Only. <br /> <span className="text-[#00A099]">Global</span>{" "}
+                Reach
+              </p>
+              <p className="text-[#344054] py-4 font-normal text-base">
+                <span>
+                  The Intelligent Marketplace for Talent Acquisition Avoid
+                  hiring
+                </span>{" "}
+                <br />{" "}
+                <span>
+                  costs and layoffs by trading talent within a trusted network”
+                </span>
+              </p>
+            </div>
+            <Image src={"/home/hero-1.png"} width={620} height={416} alt="" />
           </div>
         </div>
       </div>

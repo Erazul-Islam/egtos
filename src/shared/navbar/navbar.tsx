@@ -29,7 +29,7 @@ export function Navbar() {
   ];
 
   return (
-    <header className="sticky max-w-[1440px] top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky md:mt-4 px-3 md:px-0 top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between">
         {/* Logo - always visible */}
         <div className="flex items-center md:flex-1 md:justify-start">
@@ -61,12 +61,12 @@ export function Navbar() {
 
         {/* Buttons - hidden on mobile, visible on desktop */}
         <div className="hidden md:flex items-center justify-end space-x-2 md:flex-1">
-          <Button variant="ghost" asChild>
-            <Link href="#signin">Sign In</Link>
-          </Button>
-          <Button asChild>
-            <Link href="#getstarted">Get Started</Link>
-          </Button>
+          <button className="bg-[#00A099] text-white cursor-pointer rounded-full px-5 shadow-lg py-4 font-medium text-[16px]">
+              <Link href="/get-started">Get Started</Link>
+          </button>
+          <button className="text-[#00A099] font-medium  cursor-pointer rounded-full px-5 shadow-lg py-4 bg-[#F7F7F7]">
+              <Link href="/sign-in">Sign In</Link>
+          </button>
         </div>
 
         {/* Mobile menu button - only visible on small screens */}
@@ -78,7 +78,7 @@ export function Navbar() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <SheetContent side="right" className="w-1/2 px-3 ">
               <nav className="flex flex-col gap-6 pt-10">
                 {routes.map((route) => (
                   <Link
@@ -91,11 +91,14 @@ export function Navbar() {
                   </Link>
                 ))}
                 <div className="flex flex-col gap-4 pt-4">
-                  <Button variant="outline" asChild className="w-full">
-                    <Link href="#signin" onClick={() => setIsOpen(false)}>
+                  <button className="text-[#00A099]">
+                    <Link
+                      href="/sign-in"
+                      
+                    >
                       Sign In
                     </Link>
-                  </Button>
+                  </button>
                   <Button asChild className="w-full">
                     <Link href="#getstarted" onClick={() => setIsOpen(false)}>
                       Get Started

@@ -2,7 +2,7 @@
 
 export default function Home() {
   return (
-    <div>
+    <div className="h-screen px-3">
       home
     </div>
   );

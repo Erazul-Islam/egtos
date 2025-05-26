@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="relative w-full md:my-4 ">
+    <div className="relative w-full md:mt-4 ">
       <video
         className="w-full md:h-[795px] h-[70vh]  object-cover"
         autoPlay
@@ -30,10 +30,10 @@ const Hero = () => {
         <div className="max-w-[1440px] lg:py-40 md:py-20 mx-auto px-3 md:px-5">
           <div className="flex md:flex-row flex-col items-center justify-between">
             <div className="">
-              <p className="text-[#1A1A1A] md:leading-[100px] md:text-7xl font-semibold">
+              <p className="text-[#1A1A1A] md:pt-0 pt-6 md:leading-[100px] text-3xl md:text-7xl font-semibold">
                 {" "}
                 <span className="text-[#00A099] ">Dynamic</span> Teams. Experts
-                Only. <br /> <span className="text-[#00A099]">Global</span>{" "}
+                Only.  <span className="text-[#00A099]">Global</span>{" "}
                 Reach
               </p>
               <p className="text-[#344054] py-4 font-normal text-base">

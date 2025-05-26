@@ -13,7 +13,7 @@ const StrategicBalance = () => {
         aria-hidden="true"
       ></div>
       <div className="max-w-[1440px]  mx-auto px-3 md:px-5">
-        <div className="flex md:flex-row gap-4 md:gap-0 flex-col items-center justify-between py-10 md:py-20">
+        <div className="flex md:flex-row gap-4 md:gap-0 flex-col items-center justify-between py-10 md:py-32">
           <div className="max-w-[672px]  w-full">
             <HeadingButton value="Strategic & Balanced" />
             <p className="text-[#1A1A1A] mt-5 md:my-5  md:text-5xl font-semibold">

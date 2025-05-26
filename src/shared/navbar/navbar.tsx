@@ -13,15 +13,19 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const routes = [
-    { name: "Features", href: "#features" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Resources", href: "#resources" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "How it Works", href: "/how-it-works" },
+    { name: "Request a Demo", href: "/request-a-demo" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Contact Us", href: "/contact-us" },
   ];
 
   return (
@@ -37,12 +41,14 @@ export function Navbar() {
         {/* Navigation menu - hidden on mobile */}
         <div className="hidden md:block flex-1">
           <NavigationMenu>
-            <NavigationMenuList className="gap-1">
+            <NavigationMenuList>
               {routes.map((route) => (
                 <NavigationMenuItem key={route.href}>
                   <Link href={route.href} legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
+                      className={`${navigationMenuTriggerStyle()} text-[#3D3D3D] text-sm font-normal ${
+                        pathname === route.href ? "text-[#00A099]" : ""
+                      }`}
                     >
                       {route.name}
                     </NavigationMenuLink>

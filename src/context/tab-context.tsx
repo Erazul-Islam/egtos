@@ -1,11 +1,12 @@
-'use client';
+"use client";
 
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode } from "react";
 
 type TabContent = {
   id: string;
   label: string;
   video: string;
+  image: string;
   title: ReactNode;
   subtitle: ReactNode;
 };
@@ -20,15 +21,17 @@ const TabContext = createContext<TabContextType | undefined>(undefined);
 
 export function TabProvider({ children }: { children: ReactNode }) {
   const [activeTab, setActiveTab] = useState<string | null>(null);
-  
+
   const tabs = {
     default: {
-      id: 'default',
-      label: 'Default',
-      video: '/home/hero.mp4',
+      id: "default",
+      label: "Default",
+      video: "/home/hero.mp4",
+      image: "/home/hero-1.png",
       title: (
         <>
-          <span className="text-[#00A099]">Dynamic</span> Teams. Experts Only.{' '}
+          <span className="text-[#00A099]">Dynamic</span> Teams. <br /> Experts
+          Only.
           <span className="text-[#00A099]">Global</span> Reach
         </>
       ),
@@ -41,37 +44,60 @@ export function TabProvider({ children }: { children: ReactNode }) {
       ),
     },
     capacity: {
-      id: 'capacity',
-      label: 'Capacity Trading Partners',
-      video: '/home/hero.mp4',
+      id: "capacity",
+      label: "Capacity Trading Partners",
+      video: "/home/hero.mp4",
+      image: "/home/hero-2.png",
       title: (
         <>
-          <span className="text-[#00A099]">Capacity</span> Trading Partners
+          <span className="text-[#00A099]">Smarter</span> Talent <br />{" "}
+          Management for <br /> Modern{" "}
+          <span className="text-[#00A099]">Companies</span>
         </>
       ),
-      subtitle: 'Subtitle for Capacity Trading Partners',
+      subtitle: (
+        <>
+          Cut Hiring Costs. Retain Talent. Build Stronger Teams <br />
+          Trade excess capacity and tap into global expertise—without layoffs
+        </>
+      ),
     },
     consulting: {
-      id: 'consulting',
-      label: 'Consulting Firms',
-      video: '/home/hero.mp4',
+      id: "consulting",
+      label: "Consulting Firms",
+      video: "/home/hero.mp4",
+      image: "/home/hero-3.png",
       title: (
         <>
-          <span className="text-[#00A099]">Consulting</span> Firms Network
+          <span className="text-[#00A099]">Unlock</span> New <br />{" "}
+          <span className="text-[#00A099]">Revenue</span> with Your <br /> Bench{" "}
+          <span className="text-[#00A099]">Strength</span>
         </>
       ),
-      subtitle: 'Subtitle for Consulting Firms',
+      subtitle: (
+        <>
+          <span>Monetize Idle Resources & Win More Clients</span> <br />
+          Use EGTOS to earn tokens and expand your delivery capability
+        </>
+      ),
     },
     specialists: {
-      id: 'specialists',
-      label: 'Independent Specialists',
-      video: '/home/hero.mp4',
+      id: "specialists",
+      label: "Independent Specialists",
+      video: "/home/hero.mp4",
+      image: "/home/hero-4.png",
       title: (
         <>
-          <span className="text-[#00A099]">Independent</span> Specialists Hub
+          <span className="text-[#00A099]"> Earn </span> More. <br /> Work on
+          What <br /> You Love.
         </>
       ),
-      subtitle: 'Subtitle for Independent Specialists',
+      subtitle: (
+        <>
+          <span>Your Skills Deserve Better Projects—and Better Pay</span> <br />
+          join a premium network where your expertise is valued
+        </>
+      ),
     },
   };
 
@@ -85,7 +111,7 @@ export function TabProvider({ children }: { children: ReactNode }) {
 export function useTabContext() {
   const context = useContext(TabContext);
   if (context === undefined) {
-    throw new Error('useTabContext must be used within a TabProvider');
+    throw new Error("useTabContext must be used within a TabProvider");
   }
   return context;
 }

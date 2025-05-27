@@ -1,6 +1,7 @@
 "use client";
 import { useTabContext } from "@/context/tab-context";
 import Image from "next/image";
+import TabButton from "../custom/tab-button";
 
 export default function Hero() {
   const { activeTab, setActiveTab, tabs } = useTabContext();
@@ -42,39 +43,33 @@ export default function Hero() {
                 {currentTab.subtitle}
               </p>
             </div>
-            <Image src={"/home/hero-1.png"} width={620} height={416} alt="" />
+            <Image className="md:w-[620px]" src={currentTab.image} width={620} height={416} alt="" />
           </div>
           <div className="flex gap-4 md:flex-row flex-col">
-            <button
-              className={`w-[249px] rounded-xl shadow-[0px_-2px_1px_0px_#0C19282E_inset,0px_7px_15px_-3px_#647C9933,0px_2px_4px_0px_#647C994D,0px_2px_1px_0px_#FFFFFF1A_inset] transition duration-200 hover:brightness-105 active:brightness-95 py-3  ${
-                activeTab === "capacity" ? "bg-[#00A099] text-white" : "bg-[#F7F7F7]"
-              }`}
+            <TabButton
+              label="Capacity Trading Partners"
+              width="w-[249px]"
+              isActive={activeTab === "capacity"}
               onClick={() =>
                 setActiveTab(activeTab === "capacity" ? null : "capacity")
               }
-            >
-              Capacity Trading Partners
-            </button>
-            <button
-              className={`w-[177px] rounded-xl shadow-[0px_-2px_1px_0px_#0C19282E_inset,0px_7px_15px_-3px_#647C9933,0px_2px_4px_0px_#647C994D,0px_2px_1px_0px_#FFFFFF1A_inset] transition duration-200 hover:brightness-105 active:brightness-95 py-3 ${
-                activeTab === "consulting" ? "bg-[#00A099] text-white" : "bg-[#F7F7F7] text-black"
-              }`}
+            />
+            <TabButton
+              label="Consulting Firms"
+              width="w-[177px]"
+              isActive={activeTab === "consulting"}
               onClick={() =>
                 setActiveTab(activeTab === "consulting" ? null : "consulting")
               }
-            >
-              Consulting Firms
-            </button>
-            <button
-              className={`w-[230px] rounded-xl shadow-[0px_-2px_1px_0px_#0C19282E_inset,0px_7px_15px_-3px_#647C9933,0px_2px_4px_0px_#647C994D,0px_2px_1px_0px_#FFFFFF1A_inset] transition duration-200 hover:brightness-105 active:brightness-95 py-3 ${
-                activeTab === "specialists" ? "bg-[#00A099] text-white" : "bg-[#F7F7F7]"
-              }`}
+            />
+            <TabButton
+              label="Independent Specialists"
+              width="w-[230px]"
+              isActive={activeTab === "specialists"}
               onClick={() =>
                 setActiveTab(activeTab === "specialists" ? null : "specialists")
               }
-            >
-              Independent Specialists
-            </button>
+            />
           </div>
         </div>
       </div>

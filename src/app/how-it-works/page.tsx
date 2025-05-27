@@ -1,11 +1,8 @@
-import React from 'react';
+import React from "react";
+import HowItWorks from "./components/how-it-works";
 
 const HowItWorksPage = () => {
-    return (
-        <div>
-            hello
-        </div>
-    );
+  return <HowItWorks />;
 };
 
 export default HowItWorksPage;

@@ -36,7 +36,9 @@ const EgtosHelp = () => {
             headingImage={"/how/egtos-help-1.png"}
           />
           <EgtosCard
-            details={"Use earned EGTOS Tokens to access pre-vetted professionals."}
+            details={
+              "Use earned EGTOS Tokens to access pre-vetted professionals."
+            }
             cdTitle3={"Faster, Cost-Efficient Hiring"}
             cdTitle1={"AI-Powered Talent Matching"}
             cdTitle2={"Token-Based Engagement"}
@@ -82,6 +84,13 @@ const EgtosHelp = () => {
             step={"Step 4"}
             headingImage={"/how/s-4.png"}
           />
+          <div className="flex items-center gap-2">
+            <EgtosButton className="md:max-w-[409px] md:w-full" value={"Try our Demo"} />
+            <EgtosButton
+              className="px-2"
+              value={<Image src={"/arrow.png"} width={24} height={24} alt="" />}
+            />
+          </div>
         </div>
       </div>
     </div>

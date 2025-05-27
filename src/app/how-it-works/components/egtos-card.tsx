@@ -32,7 +32,7 @@ const EgtosCard: React.FC<EgtosCardProps> = ({
 }) => {
   return (
     <div>
-      <div className="md:px-8 px-4 max-w-[648px] rounded-xl w-full shadow-2xl my-10 md:my-20 py-4 md:py-8">
+      <div className="md:px-8 px-4 max-w-[648px] rounded-xl w-full shadow-2xl my-5 md:my-20 py-4 md:py-8">
         <div className="flex flex-col md:flex-row gap-4 justify-between">
           <Image
             src={headingImage}

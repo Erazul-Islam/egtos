@@ -84,7 +84,7 @@ export function Navbar() {
                   <Link
                     key={route.href}
                     href={route.href}
-                    className="text-muted-foreground hover:text-foreground text-lg"
+                    className={`text-muted-foreground ${pathname === route.href ? 'text-[#00A099]' : '' } hover:text-foreground text-lg`}
                     onClick={() => setIsOpen(false)}
                   >
                     {route.name}

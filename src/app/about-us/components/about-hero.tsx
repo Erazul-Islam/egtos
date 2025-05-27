@@ -4,7 +4,7 @@ import React from "react";
 
 const AboutHero = () => {
   return (
-    <div className="bg-[url('/about/about-cover.jpg')] py-10 md:py-20  bg-cover ">
+    <div className="bg-[url('/about/about-cover.jpg')] my-5 py-10 md:py-20  bg-cover ">
       <div className="flex max-w-[1440px] items-center px-3 md:px-5 mx-auto flex-col md:flex-row justify-between">
         <div className="max-w-[626px] w-full">
           <p className="md:text-7xl md:pb-9 text-3xl font-semibold text-[#1A1A1A]">

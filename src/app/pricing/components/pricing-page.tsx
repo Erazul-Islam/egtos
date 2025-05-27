@@ -7,8 +7,8 @@ import React from "react";
 
 const Pricing = () => {
   return (
-    <div className="max-w-[1440px] mx-auto px-3 md:px-5">
-      <h1 className="text-center md:pt-12 md:text-6xl font-semibold text-[#1A1A1A]">
+    <div className="max-w-[1440px] bg-[url('/how/how-bg.jpg')] bg-cover items-center mx-auto px-3 md:px-5">
+      <h1 className="text-center md:pt-12 pt-6 text-3xl md:text-6xl font-semibold text-[#1A1A1A]">
         Access <span className="text-[#00A099]">Premium</span> Global Talent,
         Without The Premium Price Tag
       </h1>

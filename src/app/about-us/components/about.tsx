@@ -2,6 +2,7 @@ import React from "react";
 import AboutHero from "./about-hero";
 import EgtosModel from "./egtos-model";
 import EgtosSolution from "./egtos-solution";
+import AboutFooter from "./about-footer";
 
 const About = () => {
   return (
@@ -11,6 +12,7 @@ const About = () => {
         <EgtosModel />
       </div>
       <EgtosSolution />
+      <AboutFooter/>
     </div>
   );
 };

@@ -2,9 +2,9 @@
 
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { ChevronDownIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 function Accordion({
   ...props
@@ -41,7 +41,8 @@ function AccordionTrigger({
         {...props}
       >
         {children}
-        <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />
+        <Image className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" src={'/circle-plus 2.png'} width={40} height={40} alt="" />
+
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )

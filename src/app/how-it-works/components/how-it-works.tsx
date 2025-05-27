@@ -3,6 +3,7 @@ import HowItWorksHero from './how-it-works-hero';
 import EgtosHelp from './egtos-help';
 import EgtosBenifit from './egtos-benefit';
 import Talent from './talent';
+import FrequentlyAskQuestions from './faq';
 
 const HowItWorks = () => {
     return (
@@ -11,6 +12,7 @@ const HowItWorks = () => {
             <EgtosHelp/>
             <EgtosBenifit/>
             <Talent/>
+            <FrequentlyAskQuestions/>
         </div>
     );
 };

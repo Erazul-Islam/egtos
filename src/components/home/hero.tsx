@@ -1,20 +1,28 @@
-import Image from "next/image";
-import React from "react";
-import TabButton from "../custom/tab-button";
+// components/home/hero.tsx
+'use client';
 
-const Hero = () => {
+import { useTabContext } from "@/context/tab-context";
+import Image from "next/image";
+
+
+export default function Hero() {
+  const { activeTab, setActiveTab, tabs } = useTabContext();
+  
+  const currentTab = activeTab ? tabs[activeTab] : tabs.default;
+
   return (
-    <div className="relative w-full md:mt-4 ">
+    <div className="relative w-full md:mt-4">
       <video
-        className="w-full md:h-[795px] h-[90vh]  object-cover"
+        className="w-full md:h-[795px] h-[90vh] object-cover"
         autoPlay
         muted
         loop
         playsInline
-        src="/home/hero.mp4"
+        src={currentTab.video}
+        key={currentTab.video}
       />
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0"
         style={{
           background: `linear-gradient(104.07deg, 
           rgba(228, 255, 254, 0.608) 5.5%, 
@@ -31,34 +39,36 @@ const Hero = () => {
           <div className="flex md:flex-row flex-col items-center justify-between">
             <div className="">
               <p className="text-[#1A1A1A] md:pt-0 pt-6 md:leading-[100px] text-3xl md:text-7xl font-semibold">
-                {" "}
-                <span className="text-[#00A099] ">Dynamic</span> Teams. Experts
-                Only.  <span className="text-[#00A099]">Global</span>{" "}
-                Reach
+                {currentTab.title}
               </p>
               <p className="text-[#344054] py-4 font-normal text-base">
-                <span>
-                  The Intelligent Marketplace for Talent Acquisition Avoid
-                  hiring
-                </span>{" "}
-                <br />{" "}
-                <span>
-                  costs and layoffs by trading talent within a trusted network”
-                </span>
+                {currentTab.subtitle}
               </p>
             </div>
             <Image src={"/home/hero-1.png"} width={620} height={416} alt="" />
           </div>
           <div className="flex gap-4 md:flex-row flex-col">
-            <TabButton className="w-[249px]" value="Capacity Trading Partners" />
-            <TabButton className="w-[177px]" value="Consulting Firms" />
-            <TabButton className="w-[230px]" value="Independent Specialists" />
+            <button
+              className={`w-[249px] tab-button ${activeTab === 'capacity' ? 'active' : ''}`}
+              onClick={() => setActiveTab(activeTab === 'capacity' ? null : 'capacity')}
+            >
+              Capacity Trading Partners
+            </button>
+            <button
+              className={`w-[177px] tab-button ${activeTab === 'consulting' ? 'active' : ''}`}
+              onClick={() => setActiveTab(activeTab === 'consulting' ? null : 'consulting')}
+            >
+              Consulting Firms
+            </button>
+            <button
+              className={`w-[230px] tab-button ${activeTab === 'specialists' ? 'active' : ''}`}
+              onClick={() => setActiveTab(activeTab === 'specialists' ? null : 'specialists')}
+            >
+              Independent Specialists
+            </button>
           </div>
-          
         </div>
       </div>
     </div>
   );
-};
-
-export default Hero;
+}

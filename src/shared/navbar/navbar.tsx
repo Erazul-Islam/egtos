@@ -64,7 +64,7 @@ export function Navbar() {
           <button className="bg-[#00A099] text-white cursor-pointer rounded-full px-5 shadow-[0px_-2px_1px_0px_#0C19282E_inset,0px_7px_15px_-3px_#647C9933,0px_2px_4px_0px_#647C994D,0px_2px_1px_0px_#FFFFFF1A_inset] transition duration-200 hover:brightness-105 active:brightness-95 py-4 font-medium text-[16px]">
               <Link href="/get-started">Get Started</Link>
           </button>
-          <button className="text-[#00A099] font-medium   cursor-pointer rounded-full px-5 shadow-[0px_-2px_1px_0px_#0C19282E_inset,0px_7px_15px_-3px_#647C9933,0px_2px_4px_0px_#647C994D,0px_2px_1px_0px_#FFFFFF1A_inset] transition duration-200 hover:brightness-105 active:brightness-95 py-4 bg-[#F7F7F7]">
+          <button className="text-[#00A099] font-medium cursor-pointer rounded-full px-5 shadow-[0px_-2px_1px_0px_#0C19282E_inset,0px_7px_15px_-3px_#647C9933,0px_2px_4px_0px_#647C994D,0px_2px_1px_0px_#FFFFFF1A_inset] transition duration-200 hover:brightness-105 active:brightness-95 py-4 bg-[#F7F7F7]">
               <Link href="/sign-in">Sign In</Link>
           </button>
         </div>

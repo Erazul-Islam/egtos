@@ -1,18 +1,18 @@
 import Image from "next/image";
 import React from "react";
+import TabButton from "../custom/tab-button";
 
 const Hero = () => {
   return (
     <div className="relative w-full md:mt-4 ">
       <video
-        className="w-full md:h-[795px] h-[70vh]  object-cover"
+        className="w-full md:h-[795px] h-[90vh]  object-cover"
         autoPlay
         muted
         loop
         playsInline
         src="/home/hero.mp4"
       />
-
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -49,6 +49,12 @@ const Hero = () => {
             </div>
             <Image src={"/home/hero-1.png"} width={620} height={416} alt="" />
           </div>
+          <div className="flex gap-4 md:flex-row flex-col">
+            <TabButton className="w-[249px]" value="Capacity Trading Partners" />
+            <TabButton className="w-[177px]" value="Consulting Firms" />
+            <TabButton className="w-[230px]" value="Independent Specialists" />
+          </div>
+          
         </div>
       </div>
     </div>

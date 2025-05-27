@@ -1,13 +1,10 @@
-// components/home/hero.tsx
-'use client';
-
+"use client";
 import { useTabContext } from "@/context/tab-context";
 import Image from "next/image";
 
-
 export default function Hero() {
   const { activeTab, setActiveTab, tabs } = useTabContext();
-  
+
   const currentTab = activeTab ? tabs[activeTab] : tabs.default;
 
   return (
@@ -49,20 +46,32 @@ export default function Hero() {
           </div>
           <div className="flex gap-4 md:flex-row flex-col">
             <button
-              className={`w-[249px] tab-button ${activeTab === 'capacity' ? 'active' : ''}`}
-              onClick={() => setActiveTab(activeTab === 'capacity' ? null : 'capacity')}
+              className={`w-[249px] rounded-xl shadow-[0px_-2px_1px_0px_#0C19282E_inset,0px_7px_15px_-3px_#647C9933,0px_2px_4px_0px_#647C994D,0px_2px_1px_0px_#FFFFFF1A_inset] transition duration-200 hover:brightness-105 active:brightness-95 py-3  ${
+                activeTab === "capacity" ? "bg-[#00A099] text-white" : "bg-[#F7F7F7]"
+              }`}
+              onClick={() =>
+                setActiveTab(activeTab === "capacity" ? null : "capacity")
+              }
             >
               Capacity Trading Partners
             </button>
             <button
-              className={`w-[177px] tab-button ${activeTab === 'consulting' ? 'active' : ''}`}
-              onClick={() => setActiveTab(activeTab === 'consulting' ? null : 'consulting')}
+              className={`w-[177px] rounded-xl shadow-[0px_-2px_1px_0px_#0C19282E_inset,0px_7px_15px_-3px_#647C9933,0px_2px_4px_0px_#647C994D,0px_2px_1px_0px_#FFFFFF1A_inset] transition duration-200 hover:brightness-105 active:brightness-95 py-3 ${
+                activeTab === "consulting" ? "bg-[#00A099] text-white" : "bg-[#F7F7F7] text-black"
+              }`}
+              onClick={() =>
+                setActiveTab(activeTab === "consulting" ? null : "consulting")
+              }
             >
               Consulting Firms
             </button>
             <button
-              className={`w-[230px] tab-button ${activeTab === 'specialists' ? 'active' : ''}`}
-              onClick={() => setActiveTab(activeTab === 'specialists' ? null : 'specialists')}
+              className={`w-[230px] rounded-xl shadow-[0px_-2px_1px_0px_#0C19282E_inset,0px_7px_15px_-3px_#647C9933,0px_2px_4px_0px_#647C994D,0px_2px_1px_0px_#FFFFFF1A_inset] transition duration-200 hover:brightness-105 active:brightness-95 py-3 ${
+                activeTab === "specialists" ? "bg-[#00A099] text-white" : "bg-[#F7F7F7]"
+              }`}
+              onClick={() =>
+                setActiveTab(activeTab === "specialists" ? null : "specialists")
+              }
             >
               Independent Specialists
             </button>

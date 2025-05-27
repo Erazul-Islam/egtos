@@ -13,7 +13,7 @@ export default function HomePageContentSwitcher() {
       {!activeTab || activeTab === "default" ? (
         <HomeContent />
       ) : (
-        <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="px-4 py-12">
           {activeTab === "capacity" && <Capacity />}
           {activeTab === "consulting" && <ConsultingFirmsContent />}
           {activeTab === "specialists" && <IndependentContent />}

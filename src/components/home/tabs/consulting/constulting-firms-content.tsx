@@ -1,9 +1,10 @@
 import React from 'react';
+import MonetizeYourBranch from './monetize';
 
 const ConsultingFirmsContent = () => {
     return (
         <div>
-            comming soon
+            <MonetizeYourBranch/>
         </div>
     );
 };

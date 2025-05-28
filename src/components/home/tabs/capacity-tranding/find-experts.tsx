@@ -9,10 +9,10 @@ const FirstExperts = () => {
     //   style={{ backgroundImage: "url('/home/capacity-bg.png')" }}
       className=" bg-[#F5FEFD] my-6 md:py-12 ]"
     >
-      <div className="flex justify-between items-center max-w-[1440px] mx-auto px-3 md:px-5">
+      <div className="flex md:flex-row flex-col gap-6 justify-between items-center max-w-[1440px] mx-auto px-3 md:px-5">
         <div className="max-w-[462px] w-full px-3 md:px-6 py-3 md:py-6 rounded-2xl bg-[#F9F9F9]">
           <HeadingButton value="Find Experts" />
-          <p className="py-3 md:py-6 md:text-5xl font-medium text-[#1A1A1A]">
+          <p className="py-3 md:py-6 text-3xl md:text-5xl font-medium text-[#1A1A1A]">
             Access Experts Instantly
           </p>
           <div className="bg-[#FFFFFF] shadow-md rounded-xl px-4 py-6">

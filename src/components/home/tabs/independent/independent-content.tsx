@@ -2,10 +2,12 @@ import CustomFooter from "@/components/custom/custom-footer";
 import EgtosButton from "@/components/custom/egtos-button";
 import Link from "next/link";
 import React from "react";
+import JoinNetWork from "./join-network";
 
 const IndependentContent = () => {
   return (
     <div>
+      <JoinNetWork />
       <CustomFooter
         button1={<EgtosButton value="Apply as an Expert" />}
         button2={

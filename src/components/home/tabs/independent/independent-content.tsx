@@ -3,11 +3,13 @@ import EgtosButton from "@/components/custom/egtos-button";
 import Link from "next/link";
 import React from "react";
 import JoinNetWork from "./join-network";
+import StartGrowth from "./start-growth";
 
 const IndependentContent = () => {
   return (
     <div>
       <JoinNetWork />
+      <StartGrowth/>
       <CustomFooter
         button1={<EgtosButton value="Apply as an Expert" />}
         button2={
@@ -16,7 +18,7 @@ const IndependentContent = () => {
           </button>
         }
         details=""
-        heading="Start Earning  What you’re worth"
+        heading={<span>Start Earning  What you’re <br /> worth</span>}
       />
     </div>
   );

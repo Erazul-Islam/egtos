@@ -8,7 +8,7 @@ const GainValue = () => {
   return (
     <div className="max-w-[1440px] flex flex-col md:flex-row justify-between mx-auto px-3 md:px-5">
       <Image
-        src={"/home/capacity/capacity-1.png"}
+        src={"/home/capacity-1.png"}
         width={661}
         height={431}
         alt=""

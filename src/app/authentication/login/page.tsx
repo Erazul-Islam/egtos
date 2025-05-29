@@ -1,10 +1,10 @@
-import Image from 'next/image';
 import React from 'react';
+import AuthenticationPage from '../components/authentication-page';
 
 const LoginPage = () => {
     return (
         <div>
-            <Image src={'/login/2.svg'} width={220} height={334} alt='' />
+            <AuthenticationPage/>
         </div>
     );
 };

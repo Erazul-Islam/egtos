@@ -19,7 +19,7 @@ const SignInContent = () => {
       <div className="px-4 py-4">
         <Image src={"/logo.svg"} width={149} height={51} alt="logo" />
       </div>
-      <div className="px-4 md:px-8">
+      <div className="px-4 lg:px-16">
         <SignInHeading value="Select Profile Type" />
         <HeadingDetails value="select profile and next move to basic information" />
         <div className="flex mt-4 md:flex-row flex-col items-center">

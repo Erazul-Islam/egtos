@@ -1,11 +1,10 @@
 import React from 'react';
+import CompanyDetails from './components/company-details';
 
-const CompanyDetails = () => {
+const CompanyDetailsPage = () => {
     return (
-        <div>
-            
-        </div>
+        <CompanyDetails/>
     );
 };
 
-export default CompanyDetails;
+export default CompanyDetailsPage;

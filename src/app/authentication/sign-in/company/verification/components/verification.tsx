@@ -66,7 +66,7 @@ const Verification = () => {
               </Link>
               <AuthButton
                 onClick={() => router.push("/authentication/sign-in/company/company-details")}
-                href="/authentication/sign-in/company/verification"
+                href="/authentication/sign-in/company/company-details"
                 className="w-full"
                 value="Verify"
               />

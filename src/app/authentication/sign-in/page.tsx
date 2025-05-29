@@ -1,11 +1,9 @@
-import Link from 'next/link';
 import React from 'react';
+import SignIn from './components/sign-in';
 
 const SignUpPage = () => {
     return (
-        <div>
-            <Link href={'/authentication/login'}>Login</Link>
-        </div>
+        <SignIn/>
     );
 };
 

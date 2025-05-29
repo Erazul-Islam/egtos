@@ -1,15 +1,11 @@
-import React from "react";
-import AuthenticationCompo from "../components/authentication-page";
-import HeadingDetails from "@/components/custom/heading-details";
-import AuthButton from "../components/auth-button";
-import Image from "next/image";
-import { Label } from "@/components/ui/label";
-import Link from "next/link";
+import { Label } from '@/components/ui/label';
+import Image from 'next/image';
+import React from 'react';
+import AuthButton from '../../components/auth-button';
+import Link from 'next/link';
 
-const Login = () => {
-  return (
-    <AuthenticationCompo
-      content={
+const LoginContent = () => {
+    return (
         <div className="flex-1 order-1 md:order-2 flex flex-col px-4 py-4">
           <div className="pb-4 md:pb-0">
             <Image src={"/logo.svg"} width={149} height={51} alt="logo" />
@@ -72,16 +68,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-      }
-      details={
-        <HeadingDetails
-          className="max-w-[263px]"
-          value="It’s good to see you again. Let’s pick up where you left off"
-        />
-      }
-      heading={"Welcome back, we’ve kept your seat warm"}
-    />
-  );
+    );
 };
 
-export default Login;
+export default LoginContent;

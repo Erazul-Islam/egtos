@@ -6,10 +6,13 @@ import SignInHeading from "../../components/sign-in-heading";
 import HeadingDetails from "@/components/custom/heading-details";
 import { Progress, ProgressButton } from "../../components/progress";
 import AuthButton from "../../components/auth-button";
+import { useRouter } from "next/navigation";
+
 
 const SignInContent = () => {
 
   const [value,setValue] = useState("company")
+  const router = useRouter()
 
   return (
     <div className="md:order-2 order-1">
@@ -70,7 +73,7 @@ const SignInContent = () => {
               </div>
            </div>
         </div>
-        <AuthButton className=" w-full" value="Continue"  />
+        <AuthButton onClick={() => router.push(`/authentication/sign-in/${value}`)} className="w-full" value="Continue"/>
       </div>
     </div>
   );

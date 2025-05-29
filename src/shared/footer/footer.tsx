@@ -1,10 +1,16 @@
+"use client";
+
 import EgtosButton from "@/components/custom/egtos-button";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const Footer = () => {
+
+  const pathName = usePathname()
+
   return (
-    <div className="bg-[#F7F7F7] ">
+    <div className={`bg-[#F7F7F7] ${pathName.startsWith('/authentication') ? 'hidden' : 'block'}`}>
       <div className="max-w-[1440px] py-4 md:pt-32  pt-6 px-3 md:px-5 mx-auto">
         <Image src={"/footer.svg"} width={638} height={220} alt="egtos" />
         <div className="lg:pt-20 flex flex-col md:flex-row justify-between md:pt-10">
@@ -37,15 +43,14 @@ const Footer = () => {
             </div>
 
             <p className="text-2xl max-w-[457px] w-full md:py-10 font-semibold">
-              Connect with an egtos expert to 
-              explore how{" "}
+              Connect with an egtos expert to explore how{" "}
               <span className="text-[#00A099]">
-                our teams can drive your  business growth
+                our teams can drive your business growth
               </span>
             </p>
             <p className="text-[#475467] md:py-0 py-6 max-w-[457px] w-full text-[18px]">
-              Let us show you how egtos can transform your project 
-              outcomes - speak to our team
+              Let us show you how egtos can transform your project outcomes -
+              speak to our team
             </p>
           </div>
         </div>

@@ -29,7 +29,7 @@ export function Navbar() {
   ];
 
   return (
-    <header className=" max-w-[1440px] mx-auto md:mt-4 px-3 md:px-5 top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className={` ${pathname.startsWith('/authentication') ? 'hidden' : 'block'} max-w-[1440px] mx-auto md:mt-4 px-3 md:px-5 top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60`}>
       <div className="container flex h-14 items-center justify-between">
         {/* Logo - always visible */}
         <div className="flex items-center md:flex-1 md:justify-start">
@@ -65,7 +65,7 @@ export function Navbar() {
               <Link href="/get-started">Get Started</Link>
           </button>
           <button className="text-[#00A099] font-medium cursor-pointer rounded-full px-5 shadow-[0px_-2px_1px_0px_#0C19282E_inset,0px_7px_15px_-3px_#647C9933,0px_2px_4px_0px_#647C994D,0px_2px_1px_0px_#FFFFFF1A_inset] transition duration-200 hover:brightness-105 active:brightness-95 py-4 bg-[#F7F7F7]">
-              <Link href="/sign-in">Sign In</Link>
+              <Link href="/authentication/sign-in">Sign In</Link>
           </button>
         </div>
 
@@ -92,12 +92,7 @@ export function Navbar() {
                 ))}
                 <div className="flex flex-col gap-4 pt-4">
                   <button className="text-[#00A099]">
-                    <Link
-                      href="/sign-in"
-                      
-                    >
-                      Sign In
-                    </Link>
+                    <Link href="/authentication/sign-in">Sign In</Link>
                   </button>
                   <Button asChild className="w-full">
                     <Link href="#getstarted" onClick={() => setIsOpen(false)}>

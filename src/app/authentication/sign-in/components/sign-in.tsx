@@ -2,6 +2,7 @@ import React from "react";
 import AuthenticationCompo from "../../components/authentication-page";
 import Image from "next/image";
 import HeadingDetails from "@/components/custom/heading-details";
+import SignInContent from "./sign-in-content";
 
 const SignIn = () => {
   return (
@@ -19,7 +20,7 @@ const SignIn = () => {
       details={
         <HeadingDetails value="Create an account and begin your story with us." />
       }
-      content={<div>hello</div>}
+      content={<SignInContent/>}
     />
   );
 };

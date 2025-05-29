@@ -8,7 +8,7 @@ const AuthenticationCompo: React.FC<{
 }> = ({ heading, details, content, image }) => {
   return (
     <div className="min-h-screen flex md:flex-row flex-col">
-      <div className="bg-[#F2F4F7] order-2 md:order-1 lg:max-w-[548px] w-full flex flex-col justify-between items-center p-4">
+      <div className="bg-[#F2F4F7] order-2 md:order-1 lg:max-w-[548px] w-full gap-4 flex flex-col justify-between items-center p-4">
         <div className="flex-1 px-4 md:px-0 flex items-center justify-center">
           {image}
         </div>
@@ -16,7 +16,7 @@ const AuthenticationCompo: React.FC<{
           <p className="text-[#00A099] max-w-[380px] font-semibold text-2xl">
             {heading}
           </p>
-          {details}
+          <div className="max-w-[263px]">{details}</div>
         </div>
       </div>
       {content}

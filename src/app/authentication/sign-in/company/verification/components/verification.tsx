@@ -59,14 +59,14 @@ const Verification = () => {
               </p>
             </div>
             <div className="my-5 md:pr-24 px-4 md:px-0 flex gap-4 md:my-10">
-              <Link href={"/authentication/sign-in"}>
+              <Link href={"/authentication/sign-in/company"}>
                 <button className="py-2 cursor-pointer rounded-[12px] text-[#98A2B3] px-8 border flex items-center gap-4 border-[#D0D5DD] bg-[#FFFFFF]">
                   <MoveLeft color="#98A2B3" /> Back
                 </button>
               </Link>
               <AuthButton
-                onClick={() => router.push("/authentication/sign-in/company")}
-                href="/authentication/sign-in/company/verification"
+                onClick={() => router.push("/authentication/sign-in/company/company-details")}
+                href="/authentication/sign-in/company/company-details"
                 className="w-full"
                 value="Verify"
               />

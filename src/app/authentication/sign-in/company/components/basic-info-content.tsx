@@ -1,3 +1,5 @@
+"use client"
+
 import AuthButton from "@/app/authentication/components/auth-button";
 import {
   Completed,
@@ -10,9 +12,13 @@ import { Label } from "@/components/ui/label";
 import { MoveLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const BasicInfoContent = () => {
+
+    const router = useRouter()
+
   return (
     <div className="md:order-2 order-1">
       <div className="px-4 py-4">
@@ -76,7 +82,7 @@ const BasicInfoContent = () => {
             <Link href={'/authentication/sign-in'}><button className="py-2 cursor-pointer rounded-[12px] text-[#98A2B3] px-8 border flex items-center gap-4 border-[#D0D5DD] bg-[#FFFFFF]">
               <MoveLeft color="#98A2B3" /> Back
             </button></Link>
-            <AuthButton className="w-full" value="Continue" />
+            <AuthButton onClick={() => router.push('/authentication/sign-in/company/verification')} href='/authentication/sign-in/company/verification' className="w-full" value="Continue" />
           </div>
         </div>
       </div>

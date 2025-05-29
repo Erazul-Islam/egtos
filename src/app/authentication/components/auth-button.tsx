@@ -8,7 +8,7 @@ const AuthButton: React.FC<{
   onClick? : () => void
 }> = ({ className, href, value, onClick }) => {
   return (
-    <button onClick={onClick} className={` cursor-pointer bg-[#00A099] rounded-xl py-2 px-3 ${className}`}>
+    <button onClick={onClick} className={` cursor-pointer bg-[#00A099] rounded-[12px] py-2 px-3 ${className}`}>
       {href ? <Link className="text-white font-semibold text-xl" href={href}>{value}</Link> : <span className="text-white font-semibold text-xl">{value}</span>}
     </button>
   );

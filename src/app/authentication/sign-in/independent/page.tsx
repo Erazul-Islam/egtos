@@ -1,11 +1,8 @@
-import React from 'react';
+import React from "react";
+import Independent from "./components/independent";
 
 const IndependentPage = () => {
-    return (
-        <div>
-            comming soon
-        </div>
-    );
+  return <Independent />;
 };
 
 export default IndependentPage;

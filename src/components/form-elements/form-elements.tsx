@@ -23,7 +23,7 @@ export function EgtosInput({ type, className, placeholder, label }: input) {
       <input
         type={type}
         placeholder={placeholder}
-        className={` ${className} placeholder:text-[#98A2B3] border mt-2 rounded-[12px] py-2 px-4 text-[#101828] shadow border-[#F2F4F7] focus:outline-none focus:border-[#00A099]`}
+        className={` ${className} placeholder:text-[#98A2B3] border mt-2 rounded-[12px] py-2 px-4 text-[#1A1A1A] shadow border-[#F2F4F7] focus:outline-none focus:border-[#00A099]`}
       />
     </>
   );

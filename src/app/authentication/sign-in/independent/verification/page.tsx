@@ -1,11 +1,8 @@
-import React from 'react';
+import React from "react";
+import Verification from "./components/verification";
 
 const VerificationPage = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return <Verification />;
 };
 
 export default VerificationPage;

@@ -108,9 +108,9 @@ const Subscription = () => {
 
           {/* Navigation */}
           <div className="my-5 max-w-[761px] w-full flex flex-row gap-4 md:my-10">
-            <BackButton href="/authentication/sign-in/company/company-details" />
+            <BackButton href="/authentication/sign-in/company/upload-profile" />
             <AuthButton
-              onClick={() => router.push("/authentication/sign-in/company/subscription")}
+              onClick={() => router.push("/authentication/success")}
               className="w-full"
               value="Next"
             />

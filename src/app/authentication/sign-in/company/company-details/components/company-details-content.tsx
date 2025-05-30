@@ -80,19 +80,18 @@ const CompanyDetailsContent = () => {
               className="placeholder:text-[#98A2B3] w-full h-[140px] border mt-2 rounded-[12px] py-2 px-4 text-[#101828] shadow border-[#F2F4F7] focus:outline-none focus:border-[#00A099]"
             ></textarea>
           </div>
-
-          <div className="my-5 flex gap-4 md:my-10">
+        </form>
+        <div className="my-5 flex gap-4 md:my-10">
             <BackButton href="/authentication/sign-in/company/verification" />
             <AuthButton
               onClick={() =>
-                router.push("/authentication/sign-in/company/verification")
+                router.push("/authentication/sign-in/company/upload-profile")
               }
-              href="/authentication/sign-in/company/verification"
+              // href="/authentication/sign-in/company/upload-profile"
               className="w-full"
               value="Next"
             />
           </div>
-        </form>
       </div>
     </div>
   );

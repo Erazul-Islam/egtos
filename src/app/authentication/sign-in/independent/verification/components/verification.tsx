@@ -20,12 +20,10 @@ const Verification = () => {
 
   return (
     <div className="bg-[#F7F7F7] min-h-screen flex flex-col">
-      {/* Logo at top center */}
+
       <div className="text-center flex justify-center pt-6">
         <Image src={"/logo.svg"} width={149} height={51} alt="logo" />
       </div>
-
-      {/* Centered content */}
       <div className="flex-1 flex justify-center items-center px-4">
         <div className="bg-white w-full max-w-[892px] rounded-lg md:py-10 shadow-md md:pl-20 flex justify-center items-center">
           <div className="w-full">
@@ -63,16 +61,15 @@ const Verification = () => {
               </p>
             </div>
             <div className="my-5 md:pr-24 px-4 md:px-0 flex gap-4 md:my-10">
-              <Link href={"/authentication/sign-in/company"}>
+              <Link href={"/authentication/sign-in/independent"}>
                 <button className="py-2 cursor-pointer rounded-[12px] text-[#98A2B3] px-8 border flex items-center gap-4 border-[#D0D5DD] bg-[#FFFFFF]">
                   <MoveLeft color="#98A2B3" /> Back
                 </button>
               </Link>
               <AuthButton
                 onClick={() =>
-                  router.push("/authentication/sign-in/company/company-details")
+                  router.push("/authentication/sign-in/independent/profile-cover")
                 }
-                href="/authentication/sign-in/company/company-details"
                 className="w-full"
                 value="Verify"
               />

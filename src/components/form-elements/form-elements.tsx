@@ -64,3 +64,34 @@ export function EgtosSelect({
     </div>
   );
 }
+
+type EgtosDatePickerProps = {
+  label: string;
+  className?: string;
+  placeholder?: string;
+  value?: string;
+  onChange?: (value: string) => void;
+};
+
+export function EgtosDatePicker({
+  label,
+  className,
+  placeholder,
+  value,
+  onChange,
+}: EgtosDatePickerProps) {
+  return (
+    <div className={className}>
+      <label className="text-[#344054] my-1 font-normal text-base block">
+        {label}
+      </label>
+      <input
+        type="date"
+        value={value}
+        onChange={(e) => onChange?.(e.target.value)}
+        placeholder={placeholder}
+        className="mt-2 w-full rounded-[12px] border border-[#F2F4F7] py-2 px-4 text-[#101828] shadow focus:border-[#00A099] focus:outline-none"
+      />
+    </div>
+  );
+}

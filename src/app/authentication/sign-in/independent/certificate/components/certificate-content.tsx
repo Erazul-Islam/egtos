@@ -8,6 +8,7 @@ import {
   EgtosDatePicker,
   EgtosSelect,
 } from "@/components/form-elements/form-elements";
+import { MoveLeft } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useRef, useState } from "react";
@@ -29,7 +30,7 @@ const CertificateContent = () => {
       <div className=" px-4 py-4">
         <Image src={"/logo.svg"} width={149} height={51} alt="logo" />
       </div>
-      <div className="flex px-4 lg:px-16 xl:px-32 2xl:px-64 flex-col justify-center items-center">
+      <div className="flex px-4  lg:px-16 xl:px-32 2xl:px-64 flex-col justify-center items-center">
         <SignInHeading
           className="text-3xl text-center"
           value="Upload Certificate"
@@ -109,7 +110,11 @@ const CertificateContent = () => {
             onChange={handleCoverChange}
           />
         </div>
-        <div className="flex py-4 md:py-8 gap-4">
+        <button className="py-2 mt-4 w-full text-center justify-center md:mt-8 cursor-pointer rounded-[12px] text-[#98A2B3] px-8 border flex items-center gap-4 border-[#D0D5DD] bg-[#F2F4F7]">
+          {" "}
+          <MoveLeft /> Add
+        </button>
+        <div className="flex py-4 max-w-[600px] w-full md:py-8 gap-4">
           <BackButton href="/authentication/sign-in/independent/profile-cover" />
           <AuthButton
             onClick={() => router.push("/authentication/success")}

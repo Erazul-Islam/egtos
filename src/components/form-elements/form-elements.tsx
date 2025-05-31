@@ -1,4 +1,3 @@
-import { Label } from "../ui/label";
 import {
   Select,
   SelectContent,
@@ -12,15 +11,26 @@ type input = {
   className?: string;
   placeholder?: string;
   label?: string;
+  value?: string;
+  onChange?: (value:string) => void;
 };
 
-export function EgtosInput({ type, className, placeholder, label }: input) {
+export function EgtosInput({
+  type,
+  className,
+  placeholder,
+  label,
+  value,
+  onChange,
+}: input) {
   return (
     <>
       <Label className="text-[#344054] my-1 font-normal text-base">
         {label}
       </Label>
       <input
+        value={value}
+        onChange={(e) => onChange?.(e.target.value)}
         type={type}
         placeholder={placeholder}
         className={` ${className} placeholder:text-[#98A2B3] border mt-2 rounded-[12px] py-2 px-4 text-[#1A1A1A] shadow border-[#F2F4F7] focus:outline-none focus:border-[#00A099]`}
@@ -29,27 +39,34 @@ export function EgtosInput({ type, className, placeholder, label }: input) {
   );
 }
 
-type EgtosSelectProps = {
+
+import { Label } from "@/components/ui/label";
+
+interface EgtosSelectProps {
   label: string;
   options: string[];
   className?: string;
   placeholder?: string;
-};
+  value?: string;
+  onChange?: (value: string) => void;
+}
 
 export function EgtosSelect({
   label,
   options,
   className,
   placeholder,
+  value,
+  onChange,
 }: EgtosSelectProps) {
   return (
     <div className={className}>
       <Label className="text-[#344054] my-1 font-normal text-base">
         {label}
       </Label>
-      <Select>
+      <Select value={value} onValueChange={onChange}>
         <SelectTrigger
-          className={`mt-2 w-full rounded-[12px] border border-[#F2F4F7] py-2 px-4 text-[#101828] shadow focus:border-[#00A099] focus:outline-none`}
+          className="mt-2 w-full rounded-[12px] border border-[#F2F4F7] py-2 px-4 text-[#101828] shadow focus:border-[#00A099] focus:outline-none"
         >
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
@@ -64,6 +81,7 @@ export function EgtosSelect({
     </div>
   );
 }
+
 
 type EgtosDatePickerProps = {
   label: string;

@@ -8,21 +8,45 @@ import {
   EgtosDatePicker,
   EgtosSelect,
 } from "@/components/form-elements/form-elements";
-import { MoveLeft } from "lucide-react";
+import { MoveLeft, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useRef, useState } from "react";
 
+type CertificateEntry = {
+  name: string;
+  startDate: string;
+  endDate: string;
+  coverImage?: string | null;
+};
+
 const CertificateContent = () => {
   const router = useRouter();
   const coverInputRef = useRef<HTMLInputElement>(null);
-  const [coverImage, setCoverImage] = useState<string | null>();
+  const [certificateName, setCertificateName] = useState<string>("");
+  const [coverImage, setCoverImage] = useState<string | null>(null);
+  const [startDate, setStartDate] = useState<string>("");
+  const [endDate, setEndDate] = useState<string>("");
+  const [certificates, setCertificates] = useState<CertificateEntry[]>([]);
 
   const handleCoverChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       setCoverImage(URL.createObjectURL(file));
     }
+  };
+
+  const handleAddCertificate = () => {
+    if (!certificateName || !startDate || !endDate) return;
+    const newCert = { name: certificateName, startDate, endDate, coverImage };
+    setCertificates((prev) => [...prev, newCert]);
+    setCertificateName("");
+    setStartDate("");
+    setEndDate("");
+  };
+
+  const handleDelete = (index: number) => {
+    setCertificates((prev) => prev.filter((_, i) => i !== index));
   };
 
   return (
@@ -60,18 +84,24 @@ const CertificateContent = () => {
             "FrontEnd Developer",
             "Backend Developer",
           ]}
+          value={certificateName}
           label="Certificate Names"
+          onChange={(value) => setCertificateName(value)}
         />
         <div className="flex md:w-[600px] mt-3 w-full gap-4">
           <EgtosDatePicker
             className="md:w-[300px] w-full"
             placeholder="Select Start Date"
             label="Start Date"
+            value={startDate}
+            onChange={setStartDate}
           />
           <EgtosDatePicker
             className="md:w-[300px] w-full"
             placeholder="Select End Date"
             label="End Date"
+            onChange={setEndDate}
+            value={endDate}
           />
         </div>
         <div
@@ -110,10 +140,44 @@ const CertificateContent = () => {
             onChange={handleCoverChange}
           />
         </div>
-        <button className="py-2 mt-4 w-full text-center justify-center md:mt-8 cursor-pointer rounded-[12px] text-[#98A2B3] px-8 border flex items-center gap-4 border-[#D0D5DD] bg-[#F2F4F7]">
+        <button
+          onClick={handleAddCertificate}
+          className="py-2 mt-4 w-full text-center justify-center md:mt-8 cursor-pointer rounded-[12px] text-[#667085] px-8 border font-semibold flex items-center gap-2 border-[#D0D5DD] bg-[#F2F4F7]"
+        >
           {" "}
           <MoveLeft /> Add
         </button>
+        <div className="mt-6 w-full md:w-[600px] grid grid-cols-2 gap-4">
+          {certificates.map((cert, index) => (
+            <div
+              key={index}
+              className="border border-[#D0D5DD] bg-[#F9F9F9] p-4 rounded-lg"
+            >
+              <div className="flex w-full justify-between">
+                <div className="flex gap-2">
+                  <Image
+                    src={cert.coverImage ?? "select image"}
+                    alt="Certificate Cover"
+                    className="rounded-md"
+                    width={40}
+                    height={40}
+                  />
+                  <p className="text-[#101828] font-semibold">{cert.name}</p>
+                </div>
+                <button
+                  onClick={() => handleDelete(index)}
+                  className="text-red-500"
+                >
+                  <Trash2 className="cursor-pointer" size={20} />
+                </button>
+              </div>
+              <p className="py-2 font-semibold text-[#1A1A1A]">Duration</p>
+              <p className="text-sm text-[#667085]">
+                {cert.startDate} → {cert.endDate}
+              </p>
+            </div>
+          ))}
+        </div>
         <div className="flex py-4 max-w-[600px] w-full md:py-8 gap-4">
           <BackButton href="/authentication/sign-in/independent/profile-cover" />
           <AuthButton

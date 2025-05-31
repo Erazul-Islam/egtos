@@ -9,7 +9,8 @@ import {
 import SignInHeading from "@/app/authentication/components/sign-in-heading";
 import { BackButton } from "@/components/custom/back-button";
 import HeadingDetails from "@/components/custom/heading-details";
-import { Camera } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Camera, CloudUpload } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useRef, useState } from "react";
@@ -19,9 +20,19 @@ const ProfileCover = () => {
 
   const [coverImage, setCoverImage] = useState<string | null>(null);
   const [profileImage, setProfileImage] = useState<string | null>(null);
+  const [attachFile, setAttachFile] = useState<string | null>(null);
+  const [open, setOpen] = useState(false);
 
   const coverInputRef = useRef<HTMLInputElement>(null);
   const profileInputRef = useRef<HTMLInputElement>(null);
+  const attachFileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleAttachFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setAttachFile(URL.createObjectURL(file));
+    }
+  };
 
   const handleCoverChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -67,8 +78,8 @@ const ProfileCover = () => {
         <div className="flex flex-col mt-4 md:mt-8 justify-center items-center">
           <div className="max-w-[761px] w-full relative rounded-4xl bg-[#FFFFFF] p-3">
             <div
-              className="bg-[#F9F9F9] flex flex-col justify-center items-center rounded-tl-[24px] rounded-tr-[24px] h-[200px] relative cursor-pointer"
               onClick={() => coverInputRef.current?.click()}
+              className="bg-[#F9F9F9] flex flex-col justify-center items-center rounded-tl-[24px] rounded-tr-[24px] h-[200px] relative cursor-pointer"
             >
               {coverImage ? (
                 <Image
@@ -162,16 +173,61 @@ const ProfileCover = () => {
           <div className="my-5 max-w-[761px] w-full flex gap-4 md:my-10">
             <BackButton href="/authentication/sign-in/company/company-details" />
             <AuthButton
-              onClick={() =>
-                router.push("/authentication/sign-in/company/subscription")
-              }
-              // href="/authentication/sign-in/company/upload-profile"
+              onClick={() => setOpen(true)}
               className="w-full"
               value="Next"
             />
           </div>
         </div>
       </div>
+      <Dialog open={open} onOpenChange={() => setOpen(false)}>
+        <DialogContent className="bg-[#F7F7F7] p-4 w-full max-w-[600px]">
+          <div
+            onClick={() => attachFileInputRef.current?.click()}
+            className="bg-[#F9F9F9] flex flex-col justify-center items-center rounded-tl-[24px] rounded-tr-[24px] h-[200px] relative cursor-pointer"
+          >
+            {attachFile ? (
+              <Image
+                src={attachFile}
+                alt="cover"
+                fill
+                className="object-cover rounded-tl-[24px] rounded-tr-[24px]"
+              />
+            ) : (
+              <>
+                <p className="text-[#292D32] text-center font-semibold text-[24px]">
+                  Choose a file to Attach
+                </p>
+                <p className="text-[#667085] py-2 font-normal text-[14px]">
+                  JPEG, PNG, PDG, and MP4 formats, up to 50MB
+                </p>
+                <CloudUpload width={40} height={40} />
+              </>
+            )}
+
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              ref={attachFileInputRef}
+              onChange={handleAttachFileChange}
+            />
+          </div>
+          <div className="flex gap-4">
+            <BackButton
+              onClick={() => setOpen(false)}
+              href="/authentication/sign-in/independent/profile-cover"
+            />
+            <AuthButton
+              onClick={() =>
+                router.push("/authentication/sign-in/independent/profession")
+              }
+              className="w-full"
+              value="Continue"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

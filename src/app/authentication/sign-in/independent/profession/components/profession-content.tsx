@@ -56,7 +56,7 @@ const ProfessionContent = () => {
             <BackButton href="/authentication/sign-in/independent/profile-cover" />
             <AuthButton
               onClick={() =>
-                router.push("/authentication/sign-in/independent/profession")
+                router.push("/authentication/sign-in/independent/certificate")
               }
               className="w-full"
               value="Continue"

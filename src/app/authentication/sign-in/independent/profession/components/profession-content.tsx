@@ -18,12 +18,12 @@ const ProfessionContent = () => {
   const router = useRouter();
 
   return (
-    <div className="md:order-2 order-1">
+    <div className="md:order-2 h-screen flex flex-col order-1">
       <div className=" px-4 py-4">
         <Image src={"/logo.svg"} width={149} height={51} alt="logo" />
       </div>
       <div className=" flex flex-col justify-center items-center">
-        <div className="px-4 md:px-16">
+        <div className="px-4 md:py-16 w-full max-w-lg">
           <SignInHeading
             className="text-3xl items-center"
             value="Select Profession"
